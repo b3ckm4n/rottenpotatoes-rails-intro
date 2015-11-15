@@ -21,7 +21,7 @@ class MoviesController < ApplicationController
       @selected_ratings = @all_ratings
     end
     
-    @movies = Movie.order(@sort_by).where(:rating => @selected_ratings)
+    @movies = Movie.where(:rating => @selected_ratings).order(@sort_by)
   end
 
   def new
